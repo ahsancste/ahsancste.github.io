@@ -97,6 +97,30 @@ const answers = [
     en: 'Hello! I can help you explore Ahsan’s experience, banking work, technical skills, independent products, education, certifications and contact details. What would you like to know?',
     bn: 'আসসালামু আলাইকুম! আহসানের experience, banking work, technical skills, products, education, certifications ও contact information সম্পর্কে আমাকে প্রশ্ন করতে পারেন। কী জানতে চান?',
     actions: []
+  },
+  {
+    keys: ['tell me a joke', 'joke', 'banking joke', 'developer joke', 'কৌতুক', 'জোক'],
+    en: 'Why did the transaction refuse to commit? It had too many trust issues with the database. Good thing Ahsan believes in ACID relationships.',
+    bn: 'Transaction commit করতে চাইল না কেন? Database-এর ওপর তার trust issue ছিল! ভালো যে আহসান ACID relationship-এ বিশ্বাস করেন।',
+    actions: [['Open Playground', '#playground']]
+  },
+  {
+    keys: ['coffee status', 'coffee', 'কফি'],
+    en: 'CoffeeService status: HEALTHY. Beans loaded, exceptions handled, production deployment permitted.',
+    bn: 'CoffeeService status: HEALTHY। Beans loaded, exception handled—এখন production deployment করা যাবে।',
+    actions: []
+  },
+  {
+    keys: ['why java', 'java why', 'কেন জাভা', 'জাভা কেন'],
+    en: 'Because banking systems value stability, strong typing and ecosystems that survive long after the framework trend has changed. Also: write once, debug everywhere—with discipline.',
+    bn: 'কারণ banking system-এ stability, strong typing এবং দীর্ঘমেয়াদি ecosystem গুরুত্বপূর্ণ। আর হ্যাঁ—write once, debug everywhere; তবে discipline-এর সঙ্গে।',
+    actions: [['View Java stack', '#stack']]
+  },
+  {
+    keys: ['developer mode', 'matrix mode', 'secret command', 'ডেভেলপার মোড'],
+    en: 'Developer mode unlocked. Visit the FinTech Playground and try: sudo hire ahsan',
+    bn: 'Developer mode unlocked। FinTech Playground-এর terminal-এ লিখুন: sudo hire ahsan',
+    actions: [['Launch Playground', '#playground']]
   }
 ];
 
@@ -200,3 +224,197 @@ chatForm?.addEventListener('submit', (event) => {
 });
 
 promptButtons.forEach((button) => button.addEventListener('click', () => askPortfolio(button.dataset.question)));
+
+// IntelliJ-style run animation
+const runButton = document.querySelector('.run-button');
+const runConsole = document.querySelector('#run-console');
+const runOutput = document.querySelector('#run-output');
+let runTimers = [];
+
+function closeRunConsole() {
+  runConsole?.classList.remove('open');
+  runConsole?.setAttribute('aria-hidden', 'true');
+}
+
+runConsole?.querySelector('button')?.addEventListener('click', closeRunConsole);
+runButton?.addEventListener('click', () => {
+  runTimers.forEach(window.clearTimeout);
+  runTimers = [];
+  runOutput.textContent = '';
+  runOutput.classList.remove('build-ok');
+  runConsole.classList.add('open');
+  runConsole.setAttribute('aria-hidden', 'false');
+  const lines = [
+    '> Task :compileJava',
+    'Loading 13+ years of engineering experience…',
+    'Connecting BankingSystems and FinTech modules…',
+    'Verifying secure transaction workflows…',
+    'BUILD SUCCESSFUL — experience() is ready.'
+  ];
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  lines.forEach((line, index) => {
+    const timer = window.setTimeout(() => {
+      runOutput.textContent += `${index ? '\n' : ''}${line}`;
+      if (index === lines.length - 1) {
+        runOutput.classList.add('build-ok');
+        document.querySelector('#work')?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+      }
+    }, reducedMotion ? 0 : index * 480);
+    runTimers.push(timer);
+  });
+});
+
+// Safe, portfolio-only terminal commands
+const terminalForm = document.querySelector('#terminal-form');
+const terminalInput = document.querySelector('#terminal-input');
+const terminalOutput = document.querySelector('#terminal-output');
+const terminalHistory = [];
+let historyIndex = 0;
+
+const terminalCommands = {
+  help: 'Commands: about · experience · skills · projects · contact · quiz · joke · coffee · clear · sudo hire ahsan',
+  about: 'Ahsan Habib — Senior Software Engineer focused on Java, Banking Systems and FinTech.',
+  experience: '13+ years in software engineering · 8+ years in banking technology · nationwide financial systems.',
+  skills: 'Java 21 · Spring Boot 4 · Oracle · PostgreSQL · REST APIs · Thymeleaf · transaction design.',
+  projects: 'Cosmos UI · EncoreTrade POS · core banking · microfinance operations · recovery APIs.',
+  contact: 'Email: ahsancste@gmail.com · LinkedIn: linkedin.com/in/ahsancste',
+  joke: 'There are only 10 types of people: those who understand binary and those who check the logs.',
+  coffee: 'CoffeeService: UP · latency: 12ms · developer productivity: 99.9%',
+  'sudo hire ahsan': 'Permission granted. Excellent decision detected. Opening the contact endpoint…',
+  'hire ahsan': 'Try with elevated recruiter privileges: sudo hire ahsan'
+};
+
+function appendTerminal(text, className = '') {
+  const line = document.createElement('p');
+  if (className) line.className = className;
+  line.textContent = text;
+  terminalOutput.appendChild(line);
+  terminalOutput.scrollTop = terminalOutput.scrollHeight;
+}
+
+function runTerminalCommand(rawCommand) {
+  const command = rawCommand.trim().toLowerCase().replace(/\s+/g, ' ');
+  if (!command) return;
+  terminalHistory.push(command);
+  historyIndex = terminalHistory.length;
+  appendTerminal(`visitor@portfolio:~$ ${command}`, 'terminal-command');
+  if (command === 'clear') {
+    terminalOutput.replaceChildren();
+    return;
+  }
+  if (command === 'quiz') {
+    appendTerminal('Launching the FinTech Quick Challenge…', 'terminal-success');
+    document.querySelector('.quiz-card')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  const response = terminalCommands[command];
+  appendTerminal(response || `Command not found: ${command}. Type help for available commands.`, response ? 'terminal-success' : 'terminal-error');
+  if (command === 'sudo hire ahsan') window.setTimeout(() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }), 900);
+}
+
+terminalForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  runTerminalCommand(terminalInput.value);
+  terminalInput.value = '';
+  terminalInput.focus();
+});
+
+document.querySelectorAll('[data-command]').forEach((button) => button.addEventListener('click', () => {
+  runTerminalCommand(button.dataset.command);
+  terminalInput?.focus();
+}));
+
+terminalInput?.addEventListener('keydown', (event) => {
+  if (!terminalHistory.length || !['ArrowUp', 'ArrowDown'].includes(event.key)) return;
+  event.preventDefault();
+  historyIndex += event.key === 'ArrowUp' ? -1 : 1;
+  historyIndex = Math.max(0, Math.min(terminalHistory.length, historyIndex));
+  terminalInput.value = terminalHistory[historyIndex] || '';
+});
+
+// Three-question FinTech challenge
+const quizData = [
+  {
+    question: 'A customer signs in from a new device and immediately requests a high-value transfer. What is the safest first response?',
+    answers: ['Process it immediately', 'Use step-up verification and risk checks', 'Ask the customer to create a new account'],
+    correct: 1,
+    feedback: 'Step-up authentication adds protection without blocking legitimate customers unnecessarily.'
+  },
+  {
+    question: 'Which ACID property ensures a debit and credit either both succeed or both fail?',
+    answers: ['Atomicity', 'Isolation', 'Durability'],
+    correct: 0,
+    feedback: 'Atomicity treats the complete transfer as one indivisible transaction.'
+  },
+  {
+    question: 'What best prevents a retried payment request from charging the customer twice?',
+    answers: ['A longer timeout', 'A random delay', 'A unique idempotency key'],
+    correct: 2,
+    feedback: 'An idempotency key lets the server recognize and safely reuse the original result.'
+  }
+];
+
+const quizQuestion = document.querySelector('#quiz-question');
+const quizAnswers = document.querySelector('#quiz-answers');
+const quizFeedback = document.querySelector('#quiz-feedback');
+const quizProgress = document.querySelector('#quiz-progress');
+const quizMeterFill = document.querySelector('#quiz-meter-fill');
+const quizNext = document.querySelector('#quiz-next');
+let quizIndex = 0;
+let quizScore = 0;
+let quizComplete = false;
+
+function renderQuiz() {
+  const item = quizData[quizIndex];
+  quizComplete = false;
+  quizQuestion.textContent = item.question;
+  quizProgress.textContent = `${quizIndex + 1} / ${quizData.length}`;
+  quizMeterFill.style.width = `${((quizIndex + 1) / quizData.length) * 100}%`;
+  quizFeedback.textContent = '';
+  quizNext.hidden = true;
+  quizNext.textContent = quizIndex === quizData.length - 1 ? 'See result →' : 'Next question →';
+  quizAnswers.replaceChildren();
+  item.answers.forEach((answer, answerIndex) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = answer;
+    button.addEventListener('click', () => {
+      const buttons = [...quizAnswers.querySelectorAll('button')];
+      buttons.forEach((option, optionIndex) => {
+        option.disabled = true;
+        if (optionIndex === item.correct) option.classList.add('correct');
+      });
+      const isCorrect = answerIndex === item.correct;
+      if (isCorrect) quizScore += 1;
+      else button.classList.add('wrong');
+      quizFeedback.textContent = `${isCorrect ? 'Correct — ' : 'Good try — '}${item.feedback}`;
+      quizNext.hidden = false;
+    }, { once: true });
+    quizAnswers.appendChild(button);
+  });
+}
+
+function showQuizResult() {
+  quizComplete = true;
+  const titles = ['Risk Rookie', 'FinTech Explorer', 'Transaction Guardian', 'FinTech Defender'];
+  quizQuestion.textContent = `${quizScore} / ${quizData.length} — ${titles[quizScore]}`;
+  quizAnswers.replaceChildren();
+  quizFeedback.textContent = quizScore === quizData.length ? 'Perfect score. Production access approved.' : 'Nice run. Restart to improve your security score.';
+  quizNext.textContent = 'Restart challenge ↻';
+  quizNext.hidden = false;
+}
+
+quizNext?.addEventListener('click', () => {
+  if (quizComplete) {
+    quizIndex = 0;
+    quizScore = 0;
+    renderQuiz();
+  } else if (quizIndex < quizData.length - 1) {
+    quizIndex += 1;
+    renderQuiz();
+  } else {
+    showQuizResult();
+  }
+});
+
+if (quizQuestion && quizAnswers) renderQuiz();

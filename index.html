@@ -20,6 +20,7 @@
       <div class="project-title"><span class="idea-logo">IJ</span><strong>ahsancste.github.io</strong><span>— portfolio</span></div>
       <div class="title-search" aria-label="Search portfolio"><span>⌕</span> Search everywhere <kbd>⇧⇧</kbd></div>
       <div class="title-actions">
+        <button class="playground-shortcut" type="button" data-scroll="#playground" title="Open FinTech Playground" aria-label="Open FinTech Playground">&gt;_</button>
         <a href="Ahsan_Habib_CV.pdf" download title="Download CV" aria-label="Download CV">⇩</a>
         <button class="theme-toggle" type="button" aria-label="Switch between IntelliJ Light and Darcula" title="Switch theme"><span class="theme-icon">☾</span></button>
       </div>
@@ -32,7 +33,7 @@
       <button class="toolbar-icon" type="button" aria-label="Forward">›</button>
       <span class="branch-chip">⑂ main</span>
       <div class="run-config"><span class="spring-leaf">◆</span> PortfolioApplication <span>⌄</span></div>
-      <button class="run-button" type="button" data-scroll="#home" aria-label="Run PortfolioApplication">▶</button>
+      <button class="run-button" type="button" aria-label="Run PortfolioApplication">▶</button>
       <button class="toolbar-icon" type="button" aria-label="Debug">⌘</button>
       <span class="build-state"><i></i> Build successful</span>
     </div>
@@ -41,7 +42,7 @@
       <a class="nav-link active" href="#home"><span>⌂</span>Home</a>
       <a class="nav-link" href="#work"><span>▦</span>Work</a>
       <a class="nav-link" href="#independent"><span>⌘</span>Projects</a>
-      <a class="nav-link" href="#stack"><span>{ }</span>Stack</a>
+      <a class="nav-link" href="#playground"><span>&gt;_</span>Play</a>
       <button class="assistant-open" type="button" aria-label="Open Ahsan AI"><span>✦</span>Ask AI</button>
     </nav>
 
@@ -64,6 +65,7 @@
           <a class="tree-file nav-link" href="#story" data-file="About.java"><i class="java-icon">J</i>About.java</a>
           <a class="tree-file nav-link" href="#work" data-file="BankingSystems.java"><i class="java-icon">J</i>BankingSystems.java</a>
           <a class="tree-file nav-link" href="#independent" data-file="Projects.java"><i class="java-icon">J</i>Projects.java</a>
+          <a class="tree-file nav-link" href="#playground" data-file="FinTechPlayground.java"><i class="kotlin-icon">▶</i>FinTechPlayground.java</a>
           <a class="tree-file nav-link" href="#stack" data-file="Skills.kt"><i class="kotlin-icon">K</i>Skills.kt</a>
           <a class="tree-file nav-link" href="#credentials" data-file="Education.md"><i class="md-icon">M↓</i>Education.md</a>
           <a class="tree-file nav-link" href="#contact" data-file="Contact.http"><i class="http-icon">H</i>Contact.http</a>
@@ -134,13 +136,42 @@
             </div>
           </section>
 
+          <section id="playground" class="code-section playground-section" data-file="FinTechPlayground.java">
+            <header class="section-header"><span class="line-no">04</span><div><p>// take a short developer break</p><h2>FinTechPlayground.java</h2></div></header>
+            <div class="playground-intro"><div><span class="live-dot"></span> SANDBOX ONLINE</div><p>Explore the portfolio with terminal commands or test your transaction-security instincts.</p></div>
+            <div class="playground-grid">
+              <article class="terminal-card" aria-labelledby="terminal-title">
+                <div class="terminal-bar"><span id="terminal-title">Ahsan Terminal</span><small>bash — 80×24</small></div>
+                <div class="terminal-output" id="terminal-output" role="log" aria-live="polite">
+                  <p><span class="terminal-system">AhsanOS 13.8 · FinTech Edition</span></p>
+                  <p>Type <b>help</b> to see available commands.</p>
+                </div>
+                <form class="terminal-form" id="terminal-form" autocomplete="off">
+                  <label for="terminal-input"><span>visitor@portfolio</span>:<b>~</b>$</label>
+                  <input id="terminal-input" type="text" maxlength="80" spellcheck="false" aria-label="Terminal command" placeholder="try: help" />
+                  <button type="submit" aria-label="Run terminal command">↵</button>
+                </form>
+                <div class="terminal-hints" aria-label="Suggested terminal commands"><button type="button" data-command="help">help</button><button type="button" data-command="projects">projects</button><button type="button" data-command="sudo hire ahsan">sudo hire ahsan</button></div>
+              </article>
+
+              <article class="quiz-card" aria-labelledby="quiz-title">
+                <div class="quiz-top"><div><span>SECURITY CHECK</span><h3 id="quiz-title">FinTech Quick Challenge</h3></div><strong id="quiz-progress">1 / 3</strong></div>
+                <div class="quiz-meter" aria-hidden="true"><i id="quiz-meter-fill"></i></div>
+                <p class="quiz-question" id="quiz-question"></p>
+                <div class="quiz-answers" id="quiz-answers"></div>
+                <div class="quiz-feedback" id="quiz-feedback" role="status" aria-live="polite"></div>
+                <button class="quiz-next" id="quiz-next" type="button" hidden>Next question →</button>
+              </article>
+            </div>
+          </section>
+
           <section id="stack" class="code-section" data-file="Skills.kt">
-            <header class="section-header"><span class="line-no">04</span><div><p>// technical toolbox</p><h2>Skills.kt</h2></div></header>
+            <header class="section-header"><span class="line-no">05</span><div><p>// technical toolbox</p><h2>Skills.kt</h2></div></header>
             <div class="skills-editor"><div class="skill-line"><span>01</span><b>val</b> core = listOf(<em>"Java 21"</em>, <em>"Spring Boot 4"</em>, <em>"Spring"</em>, <em>"Struts"</em>, <em>"Hibernate"</em>)</div><div class="skill-line"><span>02</span><b>val</b> data = listOf(<em>"Oracle"</em>, <em>"PostgreSQL"</em>, <em>"SQL"</em>, <em>"Transaction Design"</em>)</div><div class="skill-line"><span>03</span><b>val</b> web = listOf(<em>"REST APIs"</em>, <em>"Thymeleaf"</em>, <em>"React"</em>, <em>"Node.js"</em>)</div><div class="skill-line"><span>04</span><b>val</b> other = listOf(<em>"C#"</em>, <em>"ASP.NET"</em>, <em>"Git"</em>, <em>"Docker"</em>)</div><div class="skill-line"><span>05</span><b>val</b> domain = listOf(<em>"Core Banking"</em>, <em>"Islamic Finance"</em>, <em>"FinTech"</em>, <em>"ERP"</em>)</div></div>
           </section>
 
           <section id="credentials" class="code-section" data-file="Education.md">
-            <header class="section-header"><span class="line-no">05</span><div><p># education & certifications</p><h2>Education.md</h2></div></header>
+            <header class="section-header"><span class="line-no">06</span><div><p># education & certifications</p><h2>Education.md</h2></div></header>
             <div class="credential-grid">
               <div class="credential-panel"><h3>Education</h3><article><time>2023</time><div><strong>M.Sc. in Computer Science</strong><span>University of South Asia · CGPA 3.51/4.00</span></div></article><article><time>2011</time><div><strong>B.Sc. Engg. in CSE</strong><span>Noakhali Science & Technology University · CGPA 3.11/4.00</span></div></article><article><time>2007</time><div><strong>HSC · Science</strong><span>Lakshmipur Government College · GPA 4.10/5.00</span></div></article><article><time>2005</time><div><strong>SSC · Science</strong><span>Lakshmipur Adarsha Samad Government High School · GPA 4.94/5.00</span></div></article></div>
               <div class="credential-panel"><h3>Certifications</h3><article><time>2025</time><div><strong>Oracle Certified Professional</strong><span>Java SE 11 Developer · 1Z0-819</span></div></article><article><time>2025</time><div><strong>Oracle Certified Associate</strong><span>Java SE 8 Programmer</span></div></article><article><time>2022</time><div><strong>C# .NET Full-Stack Developer</strong><span>StudySection.com</span></div></article></div>
@@ -148,7 +179,7 @@
           </section>
 
           <section id="contact" class="code-section contact-section" data-file="Contact.http">
-            <header class="section-header"><span class="line-no">06</span><div><p>### start a conversation</p><h2>Contact.http</h2></div></header>
+            <header class="section-header"><span class="line-no">07</span><div><p>### start a conversation</p><h2>Contact.http</h2></div></header>
             <div class="http-request"><span>POST</span><strong>https://ahsanhabib.me/opportunities</strong><button type="button" onclick="window.location.href='mailto:ahsancste@gmail.com'">▶ Send</button><pre>{
   <b>"role"</b>: <em>"Senior Java / Spring Boot Engineer"</em>,
   <b>"location"</b>: <em>"Bangladesh or international"</em>,
@@ -166,6 +197,7 @@
         <form class="chat-form" id="chat-form"><label class="sr-only" for="chat-input">Ask about Ahsan Habib</label><input id="chat-input" type="text" maxlength="240" autocomplete="off" placeholder="Ask Ahsan AI…" /><button type="submit" aria-label="Send question">↑</button></form>
       </aside>
     </div>
+    <div class="run-console" id="run-console" role="status" aria-live="polite" aria-hidden="true"><div><span>▶ PortfolioApplication</span><button type="button" aria-label="Close run output">×</button></div><pre id="run-output"></pre></div>
     <footer class="idea-statusbar"><div><span>✓</span><span>⑂ main</span><span>↕ 0</span></div><strong>AhsanHabib.java</strong><div><span>Java 21</span><span>Spring Boot 4</span><span>UTF-8</span><span>4 spaces</span><span>Ln 13, Col 8</span></div></footer>
   </div>
   <script src="app.js"></script>
