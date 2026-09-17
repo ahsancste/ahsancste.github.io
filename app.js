@@ -24,8 +24,7 @@ const navObserver = new IntersectionObserver((entries) => {
   const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
   if (!visible) return;
   const activeId = `#${visible.target.id}`;
-  const activeLink = links.find((link) => link.getAttribute('href') === activeId);
-  links.forEach((link) => link.classList.toggle('active', link === activeLink));
+  links.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === activeId));
   const fileName = visible.target.dataset.file || 'AhsanHabib.java';
   activeFileName.textContent = fileName;
   breadcrumbFile.textContent = fileName;
