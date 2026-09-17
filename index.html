@@ -3,214 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f4f7fb" />
-  <meta name="description" content="Ahsan Habib — Senior Software Engineer specializing in banking systems, Java, Spring Boot, Oracle and FinTech delivery." />
-  <title>Ahsan Habib — Banking Systems & FinTech Engineer</title>
+  <meta name="theme-color" content="#f7f8fa" />
+  <meta name="description" content="Ahsan Habib — Senior Software Engineer specializing in Java, banking systems, Spring Boot, Oracle and FinTech delivery." />
+  <title>Ahsan Habib.java — Banking Systems & FinTech Engineer</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="light">
-  <div class="noise" aria-hidden="true"></div>
-  <header class="site-header" aria-label="Primary navigation">
-    <a class="brand" href="#home" aria-label="Go to home"><span class="prompt-mark">&gt;_</span> ahsancste<span>@portfolio</span></a>
-    <nav class="nav-pill" aria-label="Portfolio sections">
-      <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-      <a class="nav-link active" href="#home">~/home</a>
-      <a class="nav-link" href="#story">~/about</a>
-      <a class="nav-link" href="#work">~/work</a>
-      <a class="nav-link" href="#stack">~/stack</a>
-      <a class="nav-link" href="#credentials">~/credentials</a>
+  <div class="idea-shell">
+    <header class="idea-titlebar">
+      <div class="window-controls" aria-hidden="true"><i></i><i></i><i></i></div>
+      <button class="idea-menu-button" type="button" aria-label="Open main menu">☰</button>
+      <div class="project-title"><span class="idea-logo">IJ</span><strong>ahsancste.github.io</strong><span>— portfolio</span></div>
+      <div class="title-search" aria-label="Search portfolio"><span>⌕</span> Search everywhere <kbd>⇧⇧</kbd></div>
+      <div class="title-actions">
+        <a href="Ahsan_Habib_CV.pdf" download title="Download CV" aria-label="Download CV">⇩</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between IntelliJ Light and Darcula" title="Switch theme"><span class="theme-icon">☾</span></button>
+      </div>
+    </header>
+    <nav class="idea-menubar" aria-label="Application menu">
+      <span>File</span><span>Edit</span><span>View</span><span>Navigate</span><span>Code</span><span>Analyze</span><span>Refactor</span><span>Build</span><span>Run</span><span>Tools</span><span>Git</span><span>Window</span><span>Help</span>
     </nav>
-    <div class="header-actions">
-      <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch theme">
-        <span class="theme-icon" aria-hidden="true">◑</span>
-      </button>
-      <a class="button button-compact" href="mailto:ahsancste@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
+    <div class="idea-toolbar">
+      <button class="toolbar-icon" type="button" aria-label="Back">‹</button>
+      <button class="toolbar-icon" type="button" aria-label="Forward">›</button>
+      <span class="branch-chip">⑂ main</span>
+      <div class="run-config"><span class="spring-leaf">◆</span> PortfolioApplication <span>⌄</span></div>
+      <button class="run-button" type="button" data-scroll="#home" aria-label="Run PortfolioApplication">▶</button>
+      <button class="toolbar-icon" type="button" aria-label="Debug">⌘</button>
+      <span class="build-state"><i></i> Build successful</span>
     </div>
-  </header>
 
-  <main>
-    <section id="home" class="hero section-shell reveal">
-      <div class="hero-orbit" aria-hidden="true"></div>
-      <div class="hero-portrait-wrap">
-        <div class="availability"><span></span> Open to global opportunities</div>
-        <img class="hero-portrait" src="portrait.png" alt="Portrait of MD Ahsan Habib" width="360" height="440" />
-      </div>
-      <p class="hero-command"><span>ahsancste@portfolio</span>:<b>~</b>$ whoami</p>
-      <p class="eyebrow">Senior Software Engineer · Banking IT · FinTech</p>
-      <h1>Hi, I’m <span>Ahsan Habib</span></h1>
-      <p class="hero-copy">I engineer dependable financial systems—connecting banking rules, secure transactions and real-world operations through Java, Spring and Oracle.</p>
-      <a class="hero-download" href="Ahsan_Habib_CV.pdf" download>
-        <span>Download my CV</span><b aria-hidden="true">↓</b>
-      </a>
+    <div class="idea-workbench">
+      <aside class="tool-rail" aria-label="IDE tool windows">
+        <button class="tool-button active" type="button" title="Project" aria-label="Project">▱</button>
+        <button class="tool-button" type="button" title="Structure" aria-label="Structure">⌘</button>
+        <button class="tool-button" type="button" title="Git" aria-label="Git">⑂</button>
+        <button class="tool-button assistant-open" type="button" title="AI Assistant" aria-label="Open AI Assistant">✦</button>
+        <span></span>
+        <button class="tool-button" type="button" title="Settings" aria-label="Settings">⚙</button>
+      </aside>
 
-      <div class="portfolio-assistant" aria-label="Ask Ahsan portfolio assistant">
-        <div class="editor-titlebar" aria-hidden="true">
-          <span class="window-dots"><i></i><i></i><i></i></span>
-          <span>assistant.ai — ahsancste/portfolio</span>
-          <span>UTF-8</span>
+      <aside class="project-pane" aria-label="Portfolio project files">
+        <div class="pane-heading"><strong>Project</strong><span>⌄</span><button type="button" aria-label="Project options">⋮</button></div>
+        <nav class="project-tree" aria-label="Portfolio sections">
+          <div class="tree-root"><span>⌄</span><b class="folder-icon">▰</b><strong>portfolio</strong></div>
+          <div class="tree-group"><span>⌄</span><b class="folder-icon">▰</b><strong>src</strong></div>
+          <a class="tree-file nav-link active" href="#home" data-file="AhsanHabib.java"><i class="java-icon">J</i>AhsanHabib.java</a>
+          <a class="tree-file nav-link" href="#story" data-file="About.java"><i class="java-icon">J</i>About.java</a>
+          <a class="tree-file nav-link" href="#work" data-file="BankingSystems.java"><i class="java-icon">J</i>BankingSystems.java</a>
+          <a class="tree-file nav-link" href="#independent" data-file="Projects.java"><i class="java-icon">J</i>Projects.java</a>
+          <a class="tree-file nav-link" href="#stack" data-file="Skills.kt"><i class="kotlin-icon">K</i>Skills.kt</a>
+          <a class="tree-file nav-link" href="#credentials" data-file="Education.md"><i class="md-icon">M↓</i>Education.md</a>
+          <a class="tree-file nav-link" href="#contact" data-file="Contact.http"><i class="http-icon">H</i>Contact.http</a>
+          <a class="tree-file" href="Ahsan_Habib_CV.pdf" download><i class="pdf-icon">PDF</i>Ahsan_Habib_CV.pdf</a>
+          <div class="tree-group"><span>›</span><b class="folder-icon">▰</b><strong>resources</strong></div>
+          <div class="tree-file muted-file"><i class="xml-icon">⌘</i>application.yml</div>
+        </nav>
+        <button class="assistant-launch assistant-open" type="button"><span>✦</span><strong>Ahsan AI</strong><small>Ask portfolio</small></button>
+      </aside>
+
+      <main class="editor-area">
+        <div class="editor-tabs" role="tablist" aria-label="Open files">
+          <a class="editor-tab active" href="#home" role="tab"><i class="java-icon">J</i><span class="active-file-name">AhsanHabib.java</span><b>×</b></a>
+          <a class="editor-tab secondary-tab" href="#independent" role="tab"><i class="java-icon">J</i>Projects.java<b>×</b></a>
         </div>
-        <div class="assistant-toolbar">
-          <div class="assistant-identity">
-            <span class="assistant-spark" aria-hidden="true">✦</span>
-            <div><strong>Ask Ahsan</strong><small><i></i> Portfolio assistant</small></div>
-          </div>
-          <span class="assistant-scope">Answers from this portfolio</span>
-        </div>
-        <div class="chat-log" id="chat-log" role="log" aria-live="polite" aria-relevant="additions">
-          <div class="chat-row assistant-row">
-            <div class="chat-avatar" aria-hidden="true">AH</div>
-            <div class="chat-bubble assistant-bubble">Hi! Ask me about Ahsan’s banking experience, technical skills, products, education or availability.</div>
-          </div>
-        </div>
-        <div class="suggested-prompts" aria-label="Suggested questions">
-          <button type="button" data-question="What do you do and how can you help?">What do you do?</button>
-          <button type="button" data-question="Tell me about your banking experience">Banking experience</button>
-          <button type="button" data-question="What products have you built?">Products</button>
-          <button type="button" data-question="What is your technical stack?">Technical stack</button>
-        </div>
-        <form class="chat-form" id="chat-form">
-          <label class="sr-only" for="chat-input">Ask about MD Ahsan Habib</label>
-          <input id="chat-input" name="question" type="text" maxlength="240" autocomplete="off" placeholder="Ask anything about Ahsan…" />
-          <button type="submit" aria-label="Send question"><span>Ask</span><b aria-hidden="true">↗</b></button>
-        </form>
-      </div>
-      <a class="scroll-cue" href="#story">Scroll to explore <span>↓</span></a>
-    </section>
+        <div class="breadcrumbs" aria-label="Current file path"><span>portfolio</span><b>›</b><span>src</span><b>›</b><strong class="breadcrumb-file">AhsanHabib.java</strong></div>
+        <div class="editor-scroll" id="editor-scroll">
+          <section id="home" class="code-section hero-section" data-file="AhsanHabib.java">
+            <div class="code-comment">// Building dependable software for real-world banking</div>
+            <div class="hero-grid">
+              <div class="hero-copy-block">
+                <p class="annotation"><span>@SoftwareEngineer</span>(domain = <em>"Banking & FinTech"</em>)</p>
+                <h1>Ahsan <span>Habib</span></h1>
+                <div class="role-line"><b>public final class</b> SeniorSoftwareEngineer <i>{</i></div>
+                <p class="hero-summary">I translate complex financial rules into secure, dependable Java systems—from core banking and Islamic investment to nationwide field operations and digital recovery channels.</p>
+                <div class="hero-tags"><span>Java 21</span><span>Spring Boot 4</span><span>Oracle</span><span>Banking Systems</span></div>
+                <div class="hero-actions"><a class="primary-action" href="#work">▶ Run experience()</a><a href="Ahsan_Habib_CV.pdf" download>⇩ Download CV</a><a href="mailto:ahsancste@gmail.com">✉ Contact</a></div>
+                <div class="role-line closing"><i>}</i></div>
+              </div>
+              <div class="profile-inspector">
+                <div class="inspector-title"><span>Profile</span><small>Quick Documentation</small></div>
+                <img src="portrait.png" alt="Portrait of Ahsan Habib" width="220" height="260" />
+                <div class="profile-meta"><strong>Ahsan Habib</strong><span>Dhaka, Bangladesh</span><span class="available"><i></i> Open to global opportunities</span></div>
+                <dl><div><dt>Experience</dt><dd>13+ years</dd></div><div><dt>Banking IT</dt><dd>8+ years</dd></div><div><dt>Focus</dt><dd>Java · FinTech</dd></div></dl>
+              </div>
+            </div>
+            <div class="stats-strip"><div><strong>13+</strong><span>years engineering</span></div><div><strong>8+</strong><span>years banking IT</span></div><div><strong>1.75M+</strong><span>members served</span></div><div><strong>2</strong><span>Oracle Java certifications</span></div></div>
+          </section>
 
-    <section id="story" class="identity section-shell reveal">
-      <div class="section-kicker">$ cat ./profile.md</div>
-      <div class="identity-grid">
-        <div class="giant-name" aria-label="Ahsan Habib">AHSAN<br />HABIB</div>
-        <div class="identity-copy">
-          <p class="eyebrow">Banking systems & enterprise software</p>
-          <h2>Thirteen years of turning complex operations into reliable software.</h2>
-          <p>I have spent more than eight years inside banking technology at Islami Bank Bangladesh PLC and Pubali Bank PLC. My work spans Islamic investment, core banking, microfinance operations, digital recovery, corporate payments, ERP and transaction-heavy enterprise applications.</p>
-          <div class="metric-grid" aria-label="Career highlights">
-            <div><strong>13+</strong><span>years in software engineering</span></div>
-            <div><strong>8+</strong><span>years in banking technology</span></div>
-            <div><strong>2</strong><span>Oracle Java certifications</span></div>
-          </div>
+          <section id="story" class="code-section" data-file="About.java">
+            <header class="section-header"><span class="line-no">01</span><div><p>/** Professional profile */</p><h2>About.java</h2></div></header>
+            <div class="about-layout"><div class="code-card about-code"><pre><span class="kw">public class</span> <span class="type">AhsanHabib</span> {
+  <span class="kw">private final</span> String role = <span class="str">"Senior Software Engineer"</span>;
+  <span class="kw">private final</span> String specialty = <span class="str">"Banking & FinTech"</span>;
+  <span class="kw">private final int</span> experience = <span class="num">13</span>;
+
+  <span class="comment">// I build for accuracy, integrity and scale.</span>
+}</pre></div><div class="about-copy"><h3>Enterprise depth, pragmatic delivery.</h3><p>I have spent more than eight years inside banking technology at Islami Bank Bangladesh PLC and Pubali Bank PLC. My work covers Islamic investment, core banking, microfinance operations, digital recovery, corporate payments, ERP and transaction-heavy enterprise applications.</p><p>I work comfortably across legacy modernization and modern Spring-based delivery—without losing sight of controls, data consistency or the people operating the software.</p></div></div>
+          </section>
+
+          <section id="work" class="code-section" data-file="BankingSystems.java">
+            <header class="section-header"><span class="line-no">02</span><div><p>// production-grade systems</p><h2>BankingSystems.java</h2></div></header>
+            <div class="experience-grid">
+              <article class="experience-card featured"><div class="card-top"><span class="java-icon">J</span><small>system/01</small></div><p>Islamic microfinance operations</p><h3>RDS Digital Operations</h3><p>Led application development for a nationwide programme serving more than 1.75 million members across approximately 38,000 villages. Delivered field deposit collection, investment recovery, client notifications and supervisory monitoring.</p><div class="tech-list"><span>Java</span><span>Spring</span><span>Struts</span><span>Hibernate</span><span>Oracle</span></div></article>
+              <article class="experience-card"><div class="card-top"><span class="java-icon">J</span><small>system/02</small></div><p>Core banking</p><h3>eIBS Investment & Financing</h3><p>Islamic banking rules translated into dependable, auditable transaction workflows.</p></article>
+              <article class="experience-card"><div class="card-top"><span class="java-icon">J</span><small>system/03</small></div><p>Workflow automation</p><h3>CIPPS</h3><p>Centralized proposals, electronic documents and verification-code controls.</p></article>
+              <article class="experience-card"><div class="card-top"><span class="java-icon">J</span><small>system/04</small></div><p>Channel integration</p><h3>Recovery APIs</h3><p>Investment recovery through mobile banking, e-wallet and online channels.</p></article>
+              <article class="experience-card"><div class="card-top"><span class="java-icon">J</span><small>system/05</small></div><p>Conventional banking</p><h3>PIBS General Banking</h3><p>Payroll processing, GL mapping and configurable tax operations.</p></article>
+            </div>
+          </section>
+
+          <section id="independent" class="code-section" data-file="Projects.java">
+            <header class="section-header"><span class="line-no">03</span><div><p>// independent products</p><h2>Projects.java</h2></div></header>
+            <div class="product-grid">
+              <a class="product-card" href="https://ahsancster.gumroad.com/l/cosmos-ui" target="_blank" rel="noreferrer"><div class="file-label"><span class="java-icon">J</span> CosmosUI.java <i>↗</i></div><h3>Cosmos UI</h3><p>Spring Boot 4 admin dashboard and reusable Thymeleaf component library for ERP, FinTech, SaaS back offices and CRUD-heavy enterprise software.</p><div class="tech-list"><span>Java 21</span><span>Thymeleaf</span><span>Bootstrap 5</span><span>DataTables</span></div><small>gumroad.com/l/cosmos-ui</small></a>
+              <a class="product-card" href="https://pos.encoretradebd.com/" target="_blank" rel="noreferrer"><div class="file-label"><span class="java-icon">J</span> EncoreTradePOS.java <i>↗</i></div><h3>EncoreTrade POS</h3><p>Multi-company, multi-branch point-of-sale system built with Spring Boot and PostgreSQL for centralized business operations.</p><div class="tech-list"><span>Spring Boot</span><span>PostgreSQL</span><span>Multi-company</span><span>POS</span></div><small>pos.encoretradebd.com</small></a>
+            </div>
+          </section>
+
+          <section id="stack" class="code-section" data-file="Skills.kt">
+            <header class="section-header"><span class="line-no">04</span><div><p>// technical toolbox</p><h2>Skills.kt</h2></div></header>
+            <div class="skills-editor"><div class="skill-line"><span>01</span><b>val</b> core = listOf(<em>"Java 21"</em>, <em>"Spring Boot 4"</em>, <em>"Spring"</em>, <em>"Struts"</em>, <em>"Hibernate"</em>)</div><div class="skill-line"><span>02</span><b>val</b> data = listOf(<em>"Oracle"</em>, <em>"PostgreSQL"</em>, <em>"SQL"</em>, <em>"Transaction Design"</em>)</div><div class="skill-line"><span>03</span><b>val</b> web = listOf(<em>"REST APIs"</em>, <em>"Thymeleaf"</em>, <em>"React"</em>, <em>"Node.js"</em>)</div><div class="skill-line"><span>04</span><b>val</b> other = listOf(<em>"C#"</em>, <em>"ASP.NET"</em>, <em>"Git"</em>, <em>"Docker"</em>)</div><div class="skill-line"><span>05</span><b>val</b> domain = listOf(<em>"Core Banking"</em>, <em>"Islamic Finance"</em>, <em>"FinTech"</em>, <em>"ERP"</em>)</div></div>
+          </section>
+
+          <section id="credentials" class="code-section" data-file="Education.md">
+            <header class="section-header"><span class="line-no">05</span><div><p># education & certifications</p><h2>Education.md</h2></div></header>
+            <div class="credential-grid">
+              <div class="credential-panel"><h3>Education</h3><article><time>2023</time><div><strong>M.Sc. in Computer Science</strong><span>University of South Asia · CGPA 3.51/4.00</span></div></article><article><time>2011</time><div><strong>B.Sc. Engg. in CSE</strong><span>Noakhali Science & Technology University · CGPA 3.11/4.00</span></div></article><article><time>2007</time><div><strong>HSC · Science</strong><span>Lakshmipur Government College · GPA 4.10/5.00</span></div></article><article><time>2005</time><div><strong>SSC · Science</strong><span>Lakshmipur Adarsha Samad Government High School · GPA 4.94/5.00</span></div></article></div>
+              <div class="credential-panel"><h3>Certifications</h3><article><time>2025</time><div><strong>Oracle Certified Professional</strong><span>Java SE 11 Developer · 1Z0-819</span></div></article><article><time>2025</time><div><strong>Oracle Certified Associate</strong><span>Java SE 8 Programmer</span></div></article><article><time>2022</time><div><strong>C# .NET Full-Stack Developer</strong><span>StudySection.com</span></div></article></div>
+            </div>
+          </section>
+
+          <section id="contact" class="code-section contact-section" data-file="Contact.http">
+            <header class="section-header"><span class="line-no">06</span><div><p>### start a conversation</p><h2>Contact.http</h2></div></header>
+            <div class="http-request"><span>POST</span><strong>https://ahsanhabib.me/opportunities</strong><button type="button" onclick="window.location.href='mailto:ahsancste@gmail.com'">▶ Send</button><pre>{
+  <b>"role"</b>: <em>"Senior Java / Spring Boot Engineer"</em>,
+  <b>"location"</b>: <em>"Bangladesh or international"</em>,
+  <b>"status"</b>: <em>"open_to_opportunities"</em>
+}</pre></div>
+            <div class="contact-links"><a href="mailto:ahsancste@gmail.com">✉ ahsancste@gmail.com</a><a href="https://linkedin.com/in/ahsancste" target="_blank" rel="noreferrer">in LinkedIn ↗</a><a href="Ahsan_Habib_CV.pdf" download>⇩ Download full CV</a></div>
+          </section>
         </div>
-      </div>
-    </section>
+      </main>
 
-    <section id="work" class="work section-shell reveal">
-      <div class="section-heading">
-        <div><p class="section-kicker">$ git log --banking-impact</p><h2>Systems built around trust.</h2></div>
-        <p>From field collections to core-ledger workflows, I focus on transaction integrity, operational visibility and maintainable delivery.</p>
-      </div>
-
-      <div class="impact-layout">
-        <article class="feature-card">
-          <div class="card-index">01</div>
-          <div class="feature-content">
-            <span class="project-type">Islamic microfinance operations</span>
-            <h3>RDS Digital Operations</h3>
-            <p>Led application development for a nationwide programme serving more than 1.75 million members across approximately 38,000 villages. Delivered field deposit collection, investment recovery, client notifications and supervisory monitoring.</p>
-            <div class="tags"><span>Java</span><span>Spring</span><span>Struts</span><span>Hibernate</span><span>Oracle</span></div>
-          </div>
-          <div class="flow-visual" aria-label="Simplified transaction flow">
-            <span>Field operation</span><i>→</i><span>Secure service</span><i>→</i><span>Core banking</span>
-          </div>
-        </article>
-
-        <div class="work-list">
-          <article><span>02</span><div><p>Core banking</p><h3>eIBS Investment & Financing</h3><small>Islamic banking rules translated into dependable transaction workflows.</small></div></article>
-          <article><span>03</span><div><p>Workflow automation</p><h3>CIPPS</h3><small>Centralized proposals, electronic documents and verification-code controls.</small></div></article>
-          <article><span>04</span><div><p>Channel integration</p><h3>Recovery APIs</h3><small>Investment recovery through mobile banking, e-wallet and online channels.</small></div></article>
-          <article><span>05</span><div><p>Conventional banking</p><h3>PIBS General Banking</h3><small>Payroll processing, GL mapping and configurable tax operations.</small></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="stack" class="craft reveal">
-      <div class="section-shell craft-intro">
-        <p class="section-kicker">$ ./skills --list</p>
-        <h2>Enterprise depth, modern delivery.</h2>
-        <p>I work comfortably across legacy modernization and new Spring-based systems—without losing sight of controls, data consistency or the people operating the software.</p>
-      </div>
-      <div class="marquee" aria-label="Technical skills">
-        <div class="marquee-track">
-          <span>Java 21</span><span>Spring Boot 4</span><span>Spring</span><span>Oracle</span><span>PostgreSQL</span><span>Hibernate</span><span>REST APIs</span><span>Thymeleaf</span><span>React</span><span>Node.js</span><span>C#</span><span>ASP.NET</span>
-          <span aria-hidden="true">Java 21</span><span aria-hidden="true">Spring Boot 4</span><span aria-hidden="true">Spring</span><span aria-hidden="true">Oracle</span><span aria-hidden="true">PostgreSQL</span><span aria-hidden="true">Hibernate</span><span aria-hidden="true">REST APIs</span><span aria-hidden="true">Thymeleaf</span><span aria-hidden="true">React</span><span aria-hidden="true">Node.js</span><span aria-hidden="true">C#</span><span aria-hidden="true">ASP.NET</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="independent" class="projects section-shell reveal">
-      <div class="section-heading">
-        <div><p class="section-kicker">$ ls ./independent-products</p><h2>Building beyond the day job.</h2></div>
-        <p>Focused experiments that turn reusable engineering patterns into practical software products.</p>
-      </div>
-      <div class="project-grid">
-        <a class="project-card cosmos" href="https://ahsancster.gumroad.com/l/cosmos-ui" target="_blank" rel="noreferrer">
-          <div class="project-number">01</div>
-          <div class="product-window" aria-hidden="true">
-            <div class="window-bar"><i></i><i></i><i></i></div>
-            <div class="window-body"><span></span><div><b></b><b></b><b></b></div></div>
-          </div>
-          <span class="project-label">Developer product</span>
-          <h3>Cosmos UI</h3>
-          <p>Spring Boot 4 admin dashboard and reusable Thymeleaf component library for ERP, FinTech and SaaS back offices.</p>
-          <div class="tags"><span>Java 21</span><span>Thymeleaf</span><span>Bootstrap 5</span><span>DataTables</span></div>
-          <span class="project-link">View product <b>↗</b></span>
-        </a>
-        <a class="project-card pos" href="https://pos.encoretradebd.com/" target="_blank" rel="noreferrer">
-          <div class="project-number">02</div>
-          <div class="branch-map" aria-hidden="true"><span>HQ</span><i></i><b>Branch 01</b><b>Branch 02</b><b>Branch 03</b></div>
-          <span class="project-label">Business application</span>
-          <h3>EncoreTrade POS</h3>
-          <p>Multi-company, multi-branch point-of-sale platform built with Spring Boot and PostgreSQL.</p>
-          <div class="tags"><span>Spring Boot</span><span>PostgreSQL</span><span>Multi-tenant</span><span>POS</span></div>
-          <span class="project-link">View live project <b>↗</b></span>
-        </a>
-      </div>
-    </section>
-
-    <section id="credentials" class="credentials section-shell reveal">
-      <div class="section-heading">
-        <div><p class="section-kicker">$ cat ./credentials.json</p><h2>Built on experience. Sharpened by learning.</h2></div>
-        <a class="text-link" href="Ahsan_Habib_CV.pdf" download>Download full CV <span>↓</span></a>
-      </div>
-      <div class="credentials-grid">
-        <div class="credential-column">
-          <h3>Certifications</h3>
-          <div class="credential-row"><span>2025</span><div><strong>Oracle Certified Professional</strong><small>Java SE 11 Developer · 1Z0-819</small></div></div>
-          <div class="credential-row"><span>2025</span><div><strong>Oracle Certified Associate</strong><small>Java SE 8 Programmer</small></div></div>
-          <div class="credential-row"><span>2022</span><div><strong>C# .NET Full-Stack Developer</strong><small>StudySection.com</small></div></div>
-        </div>
-        <div class="credential-column">
-          <h3>Education</h3>
-          <div class="credential-row"><span>2023</span><div><strong>M.Sc. in Computer Science</strong><small>University of South Asia · CGPA 3.51/4.00</small></div></div>
-          <div class="credential-row"><span>2011</span><div><strong>B.Sc. Engg. in CSE</strong><small>Noakhali Science & Technology University</small></div></div>
-          <div class="credential-row"><span>2007</span><div><strong>HSC · Science</strong><small>Lakshmipur Government College</small></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact section-shell reveal">
-      <div class="contact-card">
-        <p class="section-kicker">$ ssh hello@ahsanhabib.me</p>
-        <h2>Let’s build dependable financial systems.</h2>
-        <p>I’m open to senior Java, Spring Boot, banking technology and FinTech opportunities—locally and internationally.</p>
-        <div class="contact-actions">
-          <a class="button" href="mailto:ahsancste@gmail.com">ahsancste@gmail.com <span>↗</span></a>
-          <a class="button button-secondary" href="https://linkedin.com/in/ahsancste" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
-        </div>
-        <div class="location-line"><span>Dhaka, Bangladesh</span><span>23.8103° N · 90.4125° E</span><span>UTC+6</span></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer section-shell">
-    <a class="brand" href="#home"><span class="prompt-mark">&gt;_</span> ahsancste<span>@portfolio</span></a>
-    <p>© 2026 MD Ahsan Habib</p>
-    <a href="#home">Back to top ↑</a>
-  </footer>
+      <aside class="ai-panel" aria-label="Ahsan portfolio AI assistant">
+        <div class="ai-panel-title"><div><span>✦</span><strong>Ahsan AI</strong></div><button class="assistant-close" type="button" aria-label="Close AI Assistant">×</button></div>
+        <div class="chat-log" id="chat-log" role="log" aria-live="polite"><div class="chat-row assistant-row"><div class="chat-avatar">AH</div><div class="chat-bubble assistant-bubble">Ask me about Ahsan’s banking experience, Java stack, projects, education or availability.</div></div></div>
+        <div class="suggested-prompts"><button type="button" data-question="Tell me about your banking experience">Banking work</button><button type="button" data-question="What products have you built?">Products</button><button type="button" data-question="What is your technical stack?">Tech stack</button></div>
+        <form class="chat-form" id="chat-form"><label class="sr-only" for="chat-input">Ask about Ahsan Habib</label><input id="chat-input" type="text" maxlength="240" autocomplete="off" placeholder="Ask Ahsan AI…" /><button type="submit" aria-label="Send question">↑</button></form>
+      </aside>
+    </div>
+    <footer class="idea-statusbar"><div><span>✓</span><span>⑂ main</span><span>↕ 0</span></div><strong>AhsanHabib.java</strong><div><span>Java 21</span><span>Spring Boot 4</span><span>UTF-8</span><span>4 spaces</span><span>Ln 13, Col 8</span></div></footer>
+  </div>
   <script src="app.js"></script>
 </body>
 </html>

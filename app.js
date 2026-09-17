@@ -5,32 +5,45 @@ const storedTheme = localStorage.getItem('portfolio-theme');
 
 const startsDark = storedTheme === 'dark';
 body.classList.toggle('light', !startsDark);
-themeIcon.textContent = startsDark ? '◐' : '◑';
+themeIcon.textContent = startsDark ? '☀' : '☾';
 
 themeButton.addEventListener('click', () => {
   body.classList.toggle('light');
   const isLight = body.classList.contains('light');
   localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
-  themeIcon.textContent = isLight ? '◑' : '◐';
+  themeIcon.textContent = isLight ? '☾' : '☀';
 });
 
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.reveal').forEach((section) => revealObserver.observe(section));
-
-const sections = [...document.querySelectorAll('main section[id]')];
+const editorScroll = document.querySelector('#editor-scroll');
+const sections = [...document.querySelectorAll('.code-section[id]')];
 const links = [...document.querySelectorAll('.nav-link')];
+const activeFileName = document.querySelector('.active-file-name');
+const breadcrumbFile = document.querySelector('.breadcrumb-file');
+const statusFile = document.querySelector('.idea-statusbar > strong');
 const navObserver = new IntersectionObserver((entries) => {
   const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
   if (!visible) return;
-  links.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${visible.target.id}`));
-}, { rootMargin: '-25% 0px -60% 0px', threshold: [0.05, 0.25, 0.5] });
+  const activeId = `#${visible.target.id}`;
+  const activeLink = links.find((link) => link.getAttribute('href') === activeId);
+  links.forEach((link) => link.classList.toggle('active', link === activeLink));
+  const fileName = visible.target.dataset.file || 'AhsanHabib.java';
+  activeFileName.textContent = fileName;
+  breadcrumbFile.textContent = fileName;
+  statusFile.textContent = fileName;
+}, { root: window.innerWidth > 780 ? editorScroll : null, rootMargin: '-18% 0px -65% 0px', threshold: [0.05, 0.2, 0.45] });
 
 sections.forEach((section) => navObserver.observe(section));
+
+document.querySelectorAll('[data-scroll]').forEach((button) => button.addEventListener('click', () => {
+  document.querySelector(button.dataset.scroll)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}));
+
+const workbench = document.querySelector('.idea-workbench');
+document.querySelectorAll('.assistant-open').forEach((button) => button.addEventListener('click', () => {
+  workbench.classList.add('ai-open');
+  window.setTimeout(() => document.querySelector('#chat-input')?.focus(), 280);
+}));
+document.querySelector('.assistant-close')?.addEventListener('click', () => workbench.classList.remove('ai-open'));
 
 const chatForm = document.querySelector('#chat-form');
 const chatInput = document.querySelector('#chat-input');
